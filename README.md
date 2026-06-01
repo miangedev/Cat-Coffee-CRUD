@@ -1,27 +1,27 @@
-# Gestión de Campañas de Mercadeo
+# Cat Coffee - Sistema de Gestión de Campañas de Mercadeo
 
 Proyecto desarrollado para la materia **Programación Orientada a Objetos** como parte del plan de estudios de Ingeniería de Sistemas.
 
 ## Descripción
 
-Aplicación de consola en Java que conecta con una base de datos MySQL para gestionar campañas de mercadeo. Cumple con los requerimientos de implementación de una aplicación que integra Java y bases de datos relacionales mediante operaciones CRUD.
+**Cat Coffee** es una aplicación de consola desarrollada en Java que conecta con una base de datos MySQL para gestionar las campañas de mercadeo de la organización. El sistema permite administrar la información relacionada con campañas, personas, activos y demás recursos asociados a las actividades de marketing, mediante operaciones CRUD sobre una base de datos relacional.
 
 ## Tablas administradas
 
-- Rol
-- Personas
-- Activos
-- Categorías
-- Campañas
-- Préstamos de activos por persona
-- Reservas de activos por cliente
-- Penalización de préstamos
+* Rol
+* Personas
+* Activos
+* Categorías
+* Campañas
+* Préstamos de activos por persona
+* Reservas de activos por cliente
+* Penalización de préstamos
 
 ## Tecnologías
 
-- Java (NetBeans)
-- MySQL
-- JDBC (MySQL Connector)
+* Java (NetBeans)
+* MySQL
+* JDBC (MySQL Connector)
 
 ## Arquitectura
 
