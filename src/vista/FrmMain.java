@@ -5,7 +5,6 @@ import javax.swing.JMenuItem;
 
 public class FrmMain extends javax.swing.JFrame {
     public static void main(String args[]) {
-        /* Establecer el look and feel (estilo visual) */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -16,29 +15,42 @@ public class FrmMain extends javax.swing.JFrame {
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(FrmMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
-        /* Crear y mostrar el formulario */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 FrmMain objetoMain = new FrmMain();
-                objetoMain.setLocationRelativeTo(null); // Centra la ventana en la pantalla
-                objetoMain.setVisible(true); // ¡Esto es lo que hace la magia!
+                objetoMain.setLocationRelativeTo(null);
+                objetoMain.setVisible(true);
             }
         });
     }
-    
-    
 
     public FrmMain() {
         dao.Conexion.abrirConexion();
         initComponents();
+        FrmDiagLogin objLogin = new FrmDiagLogin((java.awt.Frame) null, true);
+        objLogin.setLocationRelativeTo(null);
+        objLogin.setVisible(true);
+        this.setSize(960, 540);
+    }
+
+    private javax.swing.JPanel crearPanelConFondo(String rutaImagen) {
+        return new javax.swing.JPanel() {
+            private java.awt.Image imagen = new javax.swing.ImageIcon(
+                    getClass().getResource(rutaImagen)).getImage();
+
+            @Override
+            protected void paintComponent(java.awt.Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = crearPanelConFondo("/recursos/fondo.png");
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -55,31 +67,32 @@ public class FrmMain extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         submenuReportes = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        JMenuItem submenuAcercaDe = new javax.swing.JMenuItem();
+        submenuAcercaDe = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        submenuGestionarPrestamos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24));
-        jLabel1.setText("Proyecto Mercadeo");
+        jLabel1.setText("Cat Coffee");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(131, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(131, Short.MAX_VALUE))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap(131, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
+                                .addContainerGap(131, Short.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(144, 144, 144))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(144, 144, 144)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(144, 144, 144)));
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenu1.setText("Archivo");
@@ -167,11 +180,25 @@ public class FrmMain extends javax.swing.JFrame {
                 submenuReportesActionPerformed(evt);
             }
         });
+        jMenu5.setText("Gestión");
+        submenuGestionarPrestamos.setText("Gestionar los Activos");
+        submenuGestionarPrestamos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submenuGestionarPrestamosActionPerformed(evt);
+            }
+        });
+        jMenu5.add(submenuGestionarPrestamos);
+        jMenuBar1.add(jMenu5);
         jMenu3.add(submenuReportes);
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Ayuda");
         submenuAcercaDe.setText("Acerca de ...");
+        submenuAcercaDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submenuAcercaDeActionPerformed(evt);
+            }
+        });
         jMenu4.add(submenuAcercaDe);
         jMenuBar1.add(jMenu4);
 
@@ -180,16 +207,16 @@ public class FrmMain extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>
 
     private void submenuSalirActionPerformed(java.awt.event.ActionEvent evt) {
         System.exit(0);
@@ -243,18 +270,31 @@ public class FrmMain extends javax.swing.JFrame {
         objFrm.setVisible(true);
     }
 
+    private void submenuGestionarPrestamosActionPerformed(java.awt.event.ActionEvent evt) {
+        FrmDiagGestionarActivos objFrm = new FrmDiagGestionarActivos(this, true);
+        objFrm.setLocationRelativeTo(null);
+        objFrm.setVisible(true);
+    }
+
     private void submenuReportesActionPerformed(java.awt.event.ActionEvent evt) {
         FrmDiagReportes objFrm = new FrmDiagReportes(this, true);
         objFrm.setLocationRelativeTo(null);
         objFrm.setVisible(true);
     }
 
-    // Variables declaration - do not modify                     
+    private void submenuAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {
+        FrmDiagAcercaDe objFrm = new FrmDiagAcercaDe(this, true);
+        objFrm.setLocationRelativeTo(null);
+        objFrm.setVisible(true);
+    }
+
+    // Variables declaration - do not modify
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem submenuSalir;
@@ -267,5 +307,7 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem submenuAdminReservas;
     private javax.swing.JMenuItem submenuAdminPenalizaciones;
     private javax.swing.JMenuItem submenuReportes;
+    private javax.swing.JMenuItem submenuGestionarPrestamos;
+    private javax.swing.JMenuItem submenuAcercaDe;
     // End of variables declaration
 }
