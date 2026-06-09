@@ -11,6 +11,9 @@ public class personas {
     private String direccion;
     private int ROL_id;
     private String nombre;
+    private String usuario;
+    private String contrasena;
+
 
     public personas() {
         this.id = 0;
@@ -22,6 +25,8 @@ public class personas {
         this.direccion = "";
         this.ROL_id = 0;
         this.nombre = "";
+        this.usuario = "";
+        this.contrasena = "";
     }
 
     public personas(int id, String tipo_documento, String numero_documento, String razon_social, String telefono, String email, String direccion, int ROL_id, String nombre) {
@@ -62,6 +67,12 @@ public class personas {
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public String getUsuario() { return usuario; }
+    public void setUsuario(String usuario) { this.usuario = usuario; }
+
+    public String getContrasena() { return contrasena; }
+    public void setContrasena(String contrasena) { this.contrasena = contrasena; }
 
     @Override
     public String toString() {

@@ -20,7 +20,11 @@ public class AdminPrestamosActivoPersonasBD extends Conexion implements CRUD {
             PreparedStatement preparedStatement = conex.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, objPrestamo.getFecha_inicio());
             preparedStatement.setString(2, objPrestamo.getFecha_fin_programa());
-            preparedStatement.setString(3, objPrestamo.getFecha_entrega_real());
+            if (objPrestamo.getFecha_entrega_real() == null || objPrestamo.getFecha_entrega_real().isEmpty()) {
+                preparedStatement.setNull(3, java.sql.Types.DATE);
+            } else {
+                preparedStatement.setString(3, objPrestamo.getFecha_entrega_real());
+            }
             preparedStatement.setString(4, objPrestamo.getEstado());
             preparedStatement.setInt(5, objPrestamo.getPERSONAS_id());
             preparedStatement.setInt(6, objPrestamo.getACTIVOS_id());
@@ -49,7 +53,11 @@ public class AdminPrestamosActivoPersonasBD extends Conexion implements CRUD {
             PreparedStatement preparedStatement = conex.prepareStatement(sql);
             preparedStatement.setString(1, objPrestamo.getFecha_inicio());
             preparedStatement.setString(2, objPrestamo.getFecha_fin_programa());
-            preparedStatement.setString(3, objPrestamo.getFecha_entrega_real());
+            if (objPrestamo.getFecha_entrega_real() == null || objPrestamo.getFecha_entrega_real().isEmpty()) {
+                preparedStatement.setNull(3, java.sql.Types.DATE);
+            } else {
+                preparedStatement.setString(3, objPrestamo.getFecha_entrega_real());
+            }
             preparedStatement.setString(4, objPrestamo.getEstado());
             preparedStatement.setInt(5, objPrestamo.getPERSONAS_id());
             preparedStatement.setInt(6, objPrestamo.getACTIVOS_id());

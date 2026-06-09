@@ -147,4 +147,53 @@ public class AdminPersonasBD extends Conexion implements CRUD {
         cerrarConexion();
         return objPersona;
     }
+
+    public personas buscarPorDocumento(String numero_documento) {
+        personas objPersona = new personas();
+        Connection conex = abrirConexion();
+        try {
+            String sql = "SELECT * FROM personas WHERE numero_documento=?";
+            PreparedStatement preparedStatement = conex.prepareStatement(sql);
+            preparedStatement.setString(1, numero_documento);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                objPersona.setId(resultSet.getInt("id"));
+                objPersona.setTipo_documento(resultSet.getString("tipo_documento"));
+                objPersona.setNumero_documento(resultSet.getString("numero_documento"));
+                objPersona.setRazon_social(resultSet.getString("razon_social"));
+                objPersona.setTelefono(resultSet.getString("telefono"));
+                objPersona.setEmail(resultSet.getString("email"));
+                objPersona.setDireccion(resultSet.getString("direccion"));
+                objPersona.setROL_id(resultSet.getInt("ROL_id"));
+                objPersona.setNombre(resultSet.getString("nombre"));
+                objPersona.setUsuario(resultSet.getString("usuario"));
+                objPersona.setContrasena(resultSet.getString("contrasena"));
+            }
+            preparedStatement.close();
+        } catch (SQLException ex) {
+            System.out.println("Error al buscar persona: " + ex.getMessage());
+        }
+        cerrarConexion();
+        return objPersona;
+    }
+
+    public boolean puedeAccederAlSistema(String usuario, String contrasena) {
+        boolean acceso = false;
+        Connection conex = abrirConexion();
+        try {
+            String sql = "SELECT * FROM personas WHERE usuario=? AND contrasena=?";
+            PreparedStatement preparedStatement = conex.prepareStatement(sql);
+            preparedStatement.setString(1, usuario);
+            preparedStatement.setString(2, contrasena);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                acceso = true;
+            }
+            preparedStatement.close();
+        } catch (SQLException ex) {
+            System.out.println("Error en acceso al sistema: " + ex.getMessage());
+        }
+        cerrarConexion();
+        return acceso;
+    }
 }
