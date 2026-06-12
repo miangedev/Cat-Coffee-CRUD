@@ -65,7 +65,7 @@ public class AdminRolBD extends Conexion implements CRUD {
          boolean flag = false;
         Connection conex = abrirConexion();
         try {
-            String sql = "DELETE FROM ROL WHERE id=?";
+            String sql = "DELETE FROM rol WHERE id=?";
             PreparedStatement preparedStatement = (PreparedStatement) conex.prepareStatement(sql);
             preparedStatement.setInt(1, objRol.getId());
             int totalFilasafectadas = preparedStatement.executeUpdate();
@@ -89,7 +89,7 @@ public class AdminRolBD extends Conexion implements CRUD {
         Connection conex = abrirConexion();
         rol objRol;
         try {
-            String sql = "SELECT * FROM ROL ORDER BY id ASC";
+            String sql = "SELECT * FROM rol ORDER BY id ASC";
             PreparedStatement preparedStatement = (PreparedStatement) conex.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -113,7 +113,7 @@ public class AdminRolBD extends Conexion implements CRUD {
         Connection conex = abrirConexion();
         rol objRol = (rol) obj;
         try {
-            String sql = "SELECT * FROM ROL WHERE id = ?";
+            String sql = "SELECT * FROM rol WHERE id = ?";
             PreparedStatement preparedStatement = (PreparedStatement) conex.prepareStatement(sql);
             preparedStatement.setInt(1, objRol.getId());
             ResultSet resultSet = preparedStatement.executeQuery();

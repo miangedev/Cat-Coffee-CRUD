@@ -147,4 +147,24 @@ public class AdminActivosBD extends Conexion implements CRUD {
         cerrarConexion();
         return objActivo;
     }
+
+    public boolean actualizarEstado(int id, String estado) {
+        boolean flag = false;
+        Connection conex = abrirConexion();
+        try {
+            String sql = "UPDATE activos SET estado=? WHERE id=?";
+            PreparedStatement preparedStatement = conex.prepareStatement(sql);
+            preparedStatement.setString(1, estado);
+            preparedStatement.setInt(2, id);
+            int totalFilasafectadas = preparedStatement.executeUpdate();
+            if (totalFilasafectadas > 0) {
+                flag = true;
+            }
+            preparedStatement.close();
+        } catch (Exception e) {
+            System.out.println("Error al actualizar estado del Activo: " + e.getMessage());
+        }
+        cerrarConexion();
+        return flag;
+    }
 }

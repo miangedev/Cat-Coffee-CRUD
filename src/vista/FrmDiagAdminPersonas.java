@@ -16,6 +16,7 @@ public class FrmDiagAdminPersonas extends javax.swing.JDialog {
         this.configurarTabla();
         this.refrescarTabla();
     }
+    
 
     private void configurarTabla() {
         String cabecera[] = {"ID", "Tipo Doc", "Num Doc", "Razon Social", "Telefono", "Email", "Direccion", "ID Rol", "Nombre"};

@@ -17,7 +17,7 @@ public class RelacionesBD extends Conexion {
         Connection conex = abrirConexion();
         reporteactivoscategorias objRAC;
         try {
-            String sql = "SELECT a.id, a.nombre, a.tipo, a.marca, a.modelo, a.ano_adquisicion, a.valor_comercial, a.estado, c.nombre AS categoria FROM ACTIVOS a JOIN CATEGORIAS c ON a.CATEGORIAS_id = c.id";
+            String sql = "SELECT a.id, a.nombre, a.tipo, a.marca, a.modelo, a.ano_adquisicion, a.valor_comercial, a.estado, c.nombre AS categoria FROM activos a JOIN categorias c ON a.CATEGORIAS_id = c.id";
             PreparedStatement preparedStatement = conex.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -46,7 +46,7 @@ public class RelacionesBD extends Conexion {
         Connection conex = abrirConexion();
         reporteactivosprestados objRAP;
         try {
-            String sql = "SELECT p.id AS prestamo_id, per.nombre AS persona, a.nombre AS activo, a.tipo, a.marca, a.modelo, p.fecha_inicio, p.fecha_fin_programa, p.estado, pen.pagada FROM PRESTAMOS_ACTIVO_PERSONA p JOIN PERSONAS per ON p.PERSONAS_id = per.id JOIN ACTIVOS a ON p.ACTIVOS_id = a.id JOIN PENALIZACION_PRESTAMOS pen ON pen.PRESTAMOS_ACTIVO_PERSONA_id = p.id";
+            String sql = "SELECT p.id AS prestamo_id, per.nombre AS persona, a.nombre AS activo, a.tipo, a.marca, a.modelo, p.fecha_inicio, p.fecha_fin_programa, p.estado, pen.pagada FROM prestamos_activo_persona p JOIN personas per ON p.PERSONAS_id = per.id JOIN activos a ON p.ACTIVOS_id = a.id JOIN penalizacion_prestamos pen ON pen.PRESTAMOS_ACTIVO_PERSONA_id = p.id";
             PreparedStatement preparedStatement = conex.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -76,7 +76,7 @@ public class RelacionesBD extends Conexion {
         Connection conex = abrirConexion();
         reportepenalizacioncliente objRPC;
         try {
-            String sql = "SELECT per.nombre, per.numero_documento, pen.dias_retraso, pen.valor_penali, pen.fecha_generacion FROM PENALIZACION_PRESTAMOS pen JOIN PRESTAMOS_ACTIVO_PERSONA p ON pen.PRESTAMOS_ACTIVO_PERSONA_id = p.id JOIN PERSONAS per ON p.PERSONAS_id = per.id WHERE per.numero_documento = ?";
+            String sql = "SELECT per.nombre, per.numero_documento, pen.dias_retraso, pen.valor_penali, pen.fecha_generacion FROM penalizacion_prestamos pen JOIN prestamos_activo_persona p ON pen.PRESTAMOS_ACTIVO_PERSONA_id = p.id JOIN personas per ON p.PERSONAS_id = per.id WHERE per.numero_documento = ?";
             PreparedStatement preparedStatement = conex.prepareStatement(sql);
             preparedStatement.setString(1, numero_documento);
             ResultSet resultSet = preparedStatement.executeQuery();
