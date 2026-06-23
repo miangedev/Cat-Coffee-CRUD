@@ -69,8 +69,11 @@ mysql -u root -p < Cat_Coffee_BD.sql
 
 ## Arquitectura
 src/
+
 ├── dao/          # Interfaz CRUD y clase Conexion
+
 ├── modelo/       # Clases POJO y clases AdminBD por cada tabla
+
 └── vista/        # Formularios Swing
 
 ## Autor
