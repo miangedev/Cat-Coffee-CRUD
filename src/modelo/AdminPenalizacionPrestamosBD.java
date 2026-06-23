@@ -17,7 +17,7 @@ public class AdminPenalizacionPrestamosBD extends Conexion implements CRUD {
         penalizacionprestamos objPenali = (penalizacionprestamos) obj;
         try {
             String sql = "INSERT INTO penalizacion_prestamos(dias_retraso, valor_penali, fecha_generacion, pagada, PRESTAMOS_ACTIVO_PERSONA_id) VALUES(?,?,?,?,?)";
-            PreparedStatement preparedStatement = conex.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = conex.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setInt(1, objPenali.getDias_retraso());
             preparedStatement.setDouble(2, objPenali.getValor_penali());
             preparedStatement.setString(3, objPenali.getFecha_generacion());

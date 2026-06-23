@@ -24,8 +24,17 @@ import modelo.reporteactivosprestados;
 import modelo.reportepenalizacioncliente;
 
 public class Main {
+    
+    
 
     public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                vista.FrmMain objetoMain = new vista.FrmMain();
+                objetoMain.setLocationRelativeTo(null);
+                objetoMain.setVisible(true);
+            }
+        });
         Conexion.abrirConexion();
         AdminRolBD objAdmRolDB = new AdminRolBD();
         AdminActivosBD objAdmActBD = new AdminActivosBD();

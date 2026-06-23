@@ -17,7 +17,7 @@ public class AdminCampanasBD extends Conexion implements CRUD {
         campanas objCampana = (campanas) obj;
         try {
             String sql = "INSERT INTO campanas(nombre, descripcion, fecha_inicio, fecha_fin, estado, PERSONAS_id) VALUES(?,?,?,?,?,?)";
-            PreparedStatement preparedStatement = conex.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = conex.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, objCampana.getNombre());
             preparedStatement.setString(2, objCampana.getDescripcion());
             preparedStatement.setString(3, objCampana.getFecha_inicio());

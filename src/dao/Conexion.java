@@ -10,11 +10,9 @@ public class Conexion {
 
     public static Connection abrirConexion() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            String urldb = "jdbc:mysql://localhost:3306/gestion_de_campanas_mercadeo?serverTimezone=UTC";
-            String usr = "root";
-            String psw = "";
-            con = (Connection) DriverManager.getConnection(urldb, usr, psw);
+            Class.forName("org.sqlite.JDBC");
+            String urldb = "jdbc:sqlite:Cat Coffee CRUD.db";
+            con = DriverManager.getConnection(urldb);
             System.out.println("!!!Conexión Exitosa!!!");
         } catch (ClassNotFoundException e) {
             System.out.println("Error >> Driver no Instalado!!");

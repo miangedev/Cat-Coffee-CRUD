@@ -17,7 +17,7 @@ public class AdminReservasActivosClientesBD extends Conexion implements CRUD {
         reservasactivosclientes objReserva = (reservasactivosclientes) obj;
         try {
             String sql = "INSERT INTO reservas_activos_clientes(fecha_reserva, estado, ACTIVOS_id, PERSONAS_id) VALUES(?,?,?,?)";
-            PreparedStatement preparedStatement = conex.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = conex.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, objReserva.getFecha_reserva());
             preparedStatement.setString(2, objReserva.getEstado());
             preparedStatement.setInt(3, objReserva.getACTIVOS_id());

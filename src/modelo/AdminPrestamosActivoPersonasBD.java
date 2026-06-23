@@ -17,7 +17,7 @@ public class AdminPrestamosActivoPersonasBD extends Conexion implements CRUD {
         prestamosactivopersonas objPrestamo = (prestamosactivopersonas) obj;
         try {
             String sql = "INSERT INTO prestamos_activo_persona(fecha_inicio, fecha_fin_programa, fecha_entrega_real, estado, PERSONAS_id, ACTIVOS_id) VALUES(?,?,?,?,?,?)";
-            PreparedStatement preparedStatement = conex.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = conex.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, objPrestamo.getFecha_inicio());
             preparedStatement.setString(2, objPrestamo.getFecha_fin_programa());
             if (objPrestamo.getFecha_entrega_real() == null || objPrestamo.getFecha_entrega_real().isEmpty()) {

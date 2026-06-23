@@ -20,7 +20,7 @@ public class AdminRolBD extends Conexion implements CRUD {
         rol objRol = (rol) obj;
         try {
             String sql = "INSERT INTO rol(nombre_rol) VALUES(?)";
-            PreparedStatement preparedStatement = conex.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = conex.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, objRol.getNombre_rol());
             preparedStatement.execute();
 

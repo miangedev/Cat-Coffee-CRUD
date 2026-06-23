@@ -17,7 +17,7 @@ public class AdminCategoriasBD extends Conexion implements CRUD {
         categorias objCategoria = (categorias) obj;
         try {
             String sql = "INSERT INTO categorias(nombre, dias_prestamo, porcentaje_penalizacion) VALUES(?,?,?)";
-            PreparedStatement preparedStatement = conex.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = conex.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, objCategoria.getNombre());
             preparedStatement.setInt(2, objCategoria.getDias_prestamo());
             preparedStatement.setDouble(3, objCategoria.getPorcentaje_penalizacion());

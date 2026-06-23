@@ -57,7 +57,7 @@ public class FrmDiagAcercaDe extends javax.swing.JDialog {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel7.setForeground(new java.awt.Color(0, 204, 204));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("github.com/miangedev/Proyecto-Mercadeo-CRUD");
+        jLabel7.setText("github.com/miangedev/Cat-Coffee-CRUD");
 
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -17,7 +17,7 @@ public class AdminActivosBD extends Conexion implements CRUD {
         activos objActivo = (activos) obj;
         try {
             String sql = "INSERT INTO activos(nombre, tipo, marca, modelo, ano_adquisicion, valor_comercial, estado, CATEGORIAS_id) VALUES(?,?,?,?,?,?,?,?)";
-            PreparedStatement preparedStatement = conex.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = conex.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, objActivo.getNombre());
             preparedStatement.setString(2, objActivo.getTipo());
             preparedStatement.setString(3, objActivo.getMarca());

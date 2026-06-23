@@ -17,7 +17,7 @@ public class AdminPersonasBD extends Conexion implements CRUD {
         personas objPersona = (personas) obj;
         try {
             String sql = "INSERT INTO personas(tipo_documento, numero_documento, razon_social, telefono, email, direccion, ROL_id, nombre) VALUES(?,?,?,?,?,?,?,?)";
-            PreparedStatement preparedStatement = conex.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = conex.prepareStatement(sql, new String[]{"id"});
             preparedStatement.setString(1, objPersona.getTipo_documento());
             preparedStatement.setString(2, objPersona.getNumero_documento());
             preparedStatement.setString(3, objPersona.getRazon_social());
