@@ -27,9 +27,9 @@ El sistema cuenta con autenticación de usuarios, módulo de gestión de activos
 
 ## Configuración de la base de datos
 
-1. Importa el archivo `Cat_Coffee_BD.sql` en MySQL Workbench o desde terminal:
+1. Importa el archivo `Cat Coffee CRUD.sql` en MySQL Workbench o desde terminal:
 ```bash
-mysql -u root -p < Cat_Coffee_BD.sql
+mysql -u root -p < 'Cat Coffee CRUD.sql'
 ```
 2. Verifica que la base de datos se llame `gestion_de_campanas_mercadeo`
 3. Abre el proyecto en NetBeans y ejecuta
