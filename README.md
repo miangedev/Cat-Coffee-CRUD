@@ -69,7 +69,9 @@ sqlite3 Cat_Coffee_BD.db < Cat_Coffee_BD_SQLite.sql
 ## Arquitectura
 src/
 ├── dao/               # Interfaz CRUD y clase Conexion
+
 ├── modelo/            # Clases POJO y clases AdminBD por cada tabla
+
 └── vista/             # Formularios Swing
 
 Cat_Coffee_BD.db       # Base de datos SQLite incluida
