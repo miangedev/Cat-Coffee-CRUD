@@ -15,7 +15,7 @@ El sistema cuenta con autenticación de usuarios, módulo de gestión de activos
 | Campo | Valor |
 |---|---|
 | Usuario | `Admin` |
-| Contraseña | `1234` |
+| Contraseña | `210325` |
 
 ## Requisitos
 
