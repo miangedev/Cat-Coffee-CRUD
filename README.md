@@ -43,7 +43,7 @@ El sistema permite gestionar campañas de mercadeo, activos promocionales, perso
 | Campo | Valor |
 |---|---|
 | Usuario | `Admin` |
-| Contraseña | `1234` |
+| Contraseña | `210325` |
 
 ## Requisitos
 
