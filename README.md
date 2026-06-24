@@ -4,6 +4,34 @@ Proyecto desarrollado para la materia **Programación Orientada a Objetos** como
 
 > Estás en la rama `sqlite-ver`. Si prefieres la versión con MySQL, cambia a la rama [`mysql-ver`](../../tree/mysql-ver).
 
+## 📦 Descargas
+
+Descarga la última versión del programa en formato `.zip` desde Releases:
+
+https://github.com/miangedev/Cat-Coffee-CRUD/releases/latest
+
+El archivo `.zip` contiene el proyecto completo listo para NetBeans.
+
+---
+
+## 🧩 Cómo importar en NetBeans 25 (OpenJDK 25)
+
+1. Abre **NetBeans 25**
+2. Ve a: File → Open Project
+3. Selecciona directamente el archivo `.zip` descargado
+4. NetBeans lo importará automáticamente como proyecto Ant
+5. Asegúrate de usar **OpenJDK 25**
+- Si no está configurado:
+  ```
+  Tools → Java Platforms → Add Platform
+  ```
+6. Ejecuta el proyecto: Run Project (F6)
+
+## Requisitos:
+
+OpenJDK 25 o superior
+Apache Netbeans IDE 25
+
 ## Descripción
 
 **Cat Coffee** es una aplicación de escritorio desarrollada en Java con interfaz gráfica Swing, conectada a una base de datos SQLite embebida. No requiere instalar ningún servidor de base de datos, la base de datos se incluye directamente en el proyecto como archivo `.db`.
