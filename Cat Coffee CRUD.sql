@@ -90,7 +90,8 @@ INSERT INTO `personas` VALUES
 (6,'NIT','900300400-1','Pachorizo Food','3103000300','contacto@pachorizo.com','Calle 5 #50-60',1,'Pachorizo','',''),
 (7,'CC','5555555','SOPORTE','3107000700','soporte@apachorizo.com','Soporte Piso 1',5,'Soporte Técnico','',''),
 (8,'CC','4444444','SUPERVISOR','3108000800','supervisor@pachorizo.com','Gerencia Piso 2',4,'Supervisor','',''),
-(9,'TI','1234567890','DUEÑA DE PACHORIZO','3053034242','mariana@mariana.com','calle 62 1w26',7,'Mariana Ravelo Osorio','','');
+(9,'TI','1234567890','DUEÑA DE PACHORIZO','3053034242','mariana@mariana.com','calle 62 1w26',7,'Mariana Ravelo Osorio','',''),
+(13,'CC','000001','Admin','000000','mikel@mail.com','Direccion',1,'Miguel','Admin','7038cc582807c5b3954adec7730852d0');
 
 DROP TABLE IF EXISTS `prestamos_activo_persona`;
 CREATE TABLE `prestamos_activo_persona` (
