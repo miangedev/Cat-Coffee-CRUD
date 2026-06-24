@@ -4,7 +4,7 @@ Proyecto desarrollado para la materia **Programación Orientada a Objetos** como
 
 > Estás en la rama `sqlite-ver`. Si prefieres la versión con MySQL, cambia a la rama [`mysql-ver`](../../tree/mysql-ver).
 
-## 📦 Descargas
+## Descargas
 
 Descarga la última versión del programa en formato `.zip` desde Releases:
 
@@ -14,7 +14,7 @@ El archivo `.zip` contiene el proyecto completo listo para NetBeans.
 
 ---
 
-## 🧩 Cómo importar en NetBeans 25 (OpenJDK 25)
+## Cómo importar en NetBeans 25 (OpenJDK 25)
 
 1. Abre **NetBeans 25**
 2. Ve a: File → Open Project
