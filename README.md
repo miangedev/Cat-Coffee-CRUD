@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="res/logo.png" alt="Logo" width="640">
+  <img src="res/logo.png" alt="Logo" width="641">
 </div>
 
 # Cat Coffee - Sistema de Gestión de Campañas de Mercadeo
