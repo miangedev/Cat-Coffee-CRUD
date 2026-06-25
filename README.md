@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="res/logo.png" alt="Logo" width="640">
+</div>
+
 # Cat Coffee - Sistema de Gestión de Campañas de Mercadeo
 
 Proyecto desarrollado para la materia **Programación Orientada a Objetos** como parte del plan de estudios de Ingeniería de Sistemas.
