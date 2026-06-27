@@ -114,8 +114,8 @@ Cat_Coffee_BD_SQLite.sql  # Script para regenerar la BD
 ## Autor
 
 Miguel Angel Osorio Orduz
-github.com/miangedev
-github.com/miangedev/Cat-Coffee-CRUD
+github.com/mikel-btw
+github.com/mikel-btw/Cat-Coffee-CRUD
 
 Programación Orientada a Objetos 2026
 Docente: Alberto José Angarita Cuellar
